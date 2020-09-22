@@ -1,0 +1,42 @@
+2018-01-01 * Opening Balances
+	assets:inventory:2015 Acme Estate Red 750  13800 bottles @ $50.00
+	equity:opening balances
+
+2018-02-08 * Spring Offering Sale
+	; order: ORD-000123456, customer: Christian Warden
+	assets:inventory:2015 Acme Estate Red 750               -3 bottles @ $50.00
+	assets:inventory:pre-sold:2015 Acme Estate Red 750       3 bottles @ $50.00
+	liabilities:deferred revenue:pre-release          $-1500.00; product: Acme Estate Red 750, vintage: 2015
+	liabilities:deferred revenue:shipping               $-35.00
+	liabilities:deferred tax:excise:california         $-116.25
+	assets:accounts receivable:christian warden                  $1651.25
+
+2018-02-08 * Credit Card Payment
+	assets:accounts receivable:merchant account                  $1651.25
+	assets:accounts receivable:christian warden                  $-1651.25
+
+2018-02-09 * Credit Card Batch Settlement
+	assets:checking                                    $1601.71
+	expenses:banking fees:credit card processing         $49.54
+	assets:accounts receivable:merchant account       $-1651.25 =0
+
+2018-08-08 * Ship Spring Order
+	; order: ORD-000123456, customer: Christian Warden
+	assets:inventory:pre-sold:2015 Acme Estate Red 750      -3 bottles @ $50.00
+	expenses:cogs:wine                                  $150.00
+	liabilities:deferred revenue:pre-release           $1500.00; product: Acme Estate Red 750, vintage: 2015
+	income:wine:retail                                $-1500.00; product: Acme Estate Red 750, vintage: 2015
+	expenses:shipping                                    $35.00
+	income:shipping                                     $-35.00
+	liabilities:deferred revenue:shipping                $35.00
+	liabilities:deferred tax:excise:california          $116.25
+	liabilities:tax payable:excise:california          $-116.25
+	liabilities:accounts payable:shipping:fedex         $-35.00
+
+2018-08-15 * Pay Fedex
+	liabilities:accounts payable:shipping:fedex          35.00
+	assets:checking                                     $-35.00
+
+2018-08-30 * Tax Payment
+	liabilities:tax payable:excise:california           $116.25
+	assets:checking                                    $-116.25

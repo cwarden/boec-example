@@ -1,0 +1,30 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fouriernc}
+\usepackage{tabu}
+\usepackage[
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=20mm]{geometry}
+\usepackage{array}
+\setlength\extrarowheight{2pt}
+
+\begin{document}
+
+    \subsection*{Journal 2018 - Acme Wine}
+
+    \small
+    \begin{tabu} to \textwidth  { | l | l | l | r | r | }
+
+        \hline
+        \# & DATE & DETAILS & \multicolumn{1}{l|}{DEBIT} & \multicolumn{1}{l|}{CREDIT} \\
+        \hline
+
+        \input{__BOEC__}
+
+    \end{tabu}
+
+\end{document}
